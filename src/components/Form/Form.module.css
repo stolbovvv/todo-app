@@ -1,0 +1,90 @@
+/* wrapper */
+
+.form {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Body */
+
+.form__body {
+	display: flex;
+	min-height: 3.5rem;
+	gap: var(--space-sm);
+	font-size: var(--fs-lg);
+	font-weight: var(--fw-lg);
+}
+
+@media screen and (width < 48em) {
+	.form {
+		flex-direction: column;
+	}
+}
+
+/* Search */
+
+.form__search {
+	flex: 1 1 auto;
+	border: 1px solid var(--clr-neutral-700);
+	border-radius: var(--radius-md);
+	padding: 1em;
+	background-color: var(--clr-neutral-500);
+	color: inherit;
+}
+
+.form__search:focus-visible {
+	outline: 2px solid var(--clr-purple-dark);
+}
+
+.form__search_error,
+.form__search_error:focus-visible {
+	outline: 2px solid var(--clr-red);
+}
+
+/* Button */
+
+.form__button {
+	display: flex;
+	flex: 0 0 auto;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5em;
+	border: 1px solid var(--clr-neutral-700);
+	border-radius: var(--radius-md);
+	padding: 1em 1.5rem;
+	background-image: linear-gradient(to right, var(--clr-blue), var(--clr-purple-dark), var(--clr-blue));
+	background-position: left center;
+	background-size: 300%;
+	color: inherit;
+	transition:
+		background-position var(--transition-ease-md) 0s,
+		transform var(--transition-ease-md) 0s;
+}
+
+.form__button:focus-visible {
+	outline: 2px solid var(--clr-purple-dark);
+}
+
+.form__button:hover {
+	background-color: var(--clr-blue);
+	background-position: right center;
+}
+
+.form__button:active {
+	transform: scale(0.95);
+}
+
+.form__button > svg {
+	width: 1.25rem;
+	height: 1.25rem;
+	fill: currentColor;
+}
+
+/* Error */
+
+.form__error {
+	margin-top: 0.5em;
+	padding-inline: 0.25em;
+	font-size: var(--fs-sm);
+	color: var(--clr-red);
+}

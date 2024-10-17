@@ -1,3 +1,44 @@
+/* Custom properties */
+
+:root {
+	--clr-neutral-100: #f2f2f2;
+	--clr-neutral-200: #d9d9d9;
+	--clr-neutral-300: #808080;
+	--clr-neutral-400: #333333;
+	--clr-neutral-500: #262626;
+	--clr-neutral-600: #1a1a1a;
+	--clr-neutral-700: #0d0d0d;
+	--clr-purple: #8284fa;
+	--clr-purple-dark: #5e60ce;
+	--clr-blue: #4ea8de;
+	--clr-blue-dark: #1e6f9f;
+	--clr-blue-dark-a200: #1e6f9f33;
+	--clr-red: #e25858;
+
+	--ff-body: "Inter", sans-serif;
+
+	--fs-sm: 0.75rem;
+	--fs-md: 0.875rem;
+	--fs-lg: 1rem;
+	--fs-xl: 2.5rem;
+
+	--fw-md: 400;
+	--fw-lg: 700;
+	--fw-xl: 900;
+
+	--lh-sm: 1.2;
+	--lh-md: 1.4;
+
+	--space-sm: 0.75rem;
+	--space-md: 1.5rem;
+
+	--radius-sm: 0.25rem;
+	--radius-md: 0.5rem;
+
+	--transition-ease-sm: 0.2s ease;
+	--transition-ease-md: 0.4s ease;
+}
+
 /* Global styles */
 
 *,
@@ -25,8 +66,13 @@ html {
 
 body {
 	min-height: 100vh;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--ff-body);
+	font-size: var(--fs-md);
+	font-weight: var(--fw-md);
+	line-height: var(--lh-md);
 	text-rendering: optimizeSpeed;
+	color: var(--clr-neutral-100);
+	background-color: var(--clr-neutral-600);
 }
 
 img,

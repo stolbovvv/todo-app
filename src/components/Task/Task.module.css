@@ -1,0 +1,116 @@
+/* Task */
+
+.task {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--space-sm);
+	border: 1px solid var(--clr-neutral-400);
+	border-radius: 8px;
+	padding: 1rem;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+	background: var(--clr-neutral-500);
+}
+
+/* Checkbox */
+
+.task__checkbox {
+	flex: 0 0 auto;
+	position: relative;
+	width: 1.5rem;
+	height: 1.5rem;
+	margin: 0;
+	appearance: none;
+	border-radius: 50%;
+}
+
+.task__checkbox:focus-visible {
+	outline: 2px solid var(--clr-purple-dark);
+}
+
+.task__checkbox::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: 50%;
+	border-style: solid;
+	border-width: 1px;
+	transition: all var(--transition-ease-sm);
+}
+
+.task__checkbox:is(:checked)::before {
+	border-color: var(--clr-purple-dark);
+	background-color: var(--clr-purple-dark);
+}
+
+.task__checkbox:not(:checked)::before {
+	border-color: var(--clr-blue);
+	background-color: transparent;
+}
+
+.task__checkbox:is(:checked):hover::before {
+	border-color: var(--clr-purple);
+	background-color: var(--clr-purple);
+}
+
+.task__checkbox:not(:checked):hover::before {
+	border-color: var(--clr-blue-dark);
+	background-color: var(--clr-blue-dark-a200);
+}
+
+.task__checkbox:is(:checked)::after {
+	content: "";
+	position: absolute;
+	top: 44%;
+	left: 52%;
+	width: 0.7rem;
+	height: 0.4rem;
+	border-left: 1px solid var(--clr-neutral-100);
+	border-bottom: 1px solid var(--clr-neutral-100);
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Content */
+
+.task__content {
+	flex: 0 0 auto;
+	margin-top: 0.22rem;
+	margin-right: auto;
+}
+
+.task__checkbox:is(:checked) + .task__content {
+	text-decoration: line-through;
+	color: var(--clr-neutral-300);
+}
+
+/* Button */
+
+.task__button {
+	display: flex;
+	align-items: center;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: none;
+	border-radius: var(--radius-sm);
+	padding: 0.25rem;
+	background-color: transparent;
+	transition: all var(--transition-ease-sm);
+}
+
+.task__button:focus-visible {
+	outline: 2px solid var(--clr-red);
+}
+
+.task__button:hover {
+	background-color: var(--clr-neutral-400);
+}
+
+.task__button > svg {
+	fill: var(--clr-neutral-300);
+	width: 100%;
+	height: 100%;
+}
+
+.task__button:focus-visible > svg,
+.task__button:hover > svg {
+	fill: var(--clr-red);
+}

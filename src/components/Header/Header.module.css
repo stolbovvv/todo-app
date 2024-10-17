@@ -1,0 +1,20 @@
+/* Header */
+
+.header {
+	display: grid;
+	place-items: center;
+	height: 12.5rem;
+	padding: 2.5rem var(--space-md);
+	background-color: var(--clr-neutral-700);
+}
+
+/* Heading */
+
+.header__heading {
+	font-size: var(--fs-xl);
+	font-weight: var(--fw-xl);
+	line-height: var(--lh-sm);
+	background-image: linear-gradient(to right, var(--clr-blue), var(--clr-purple-dark));
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
