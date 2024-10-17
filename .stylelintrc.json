@@ -1,0 +1,145 @@
+{
+	"extends": ["stylelint-config-standard"],
+	"plugins": ["stylelint-order"],
+
+	"rules": {
+		"order/order": [
+			"custom-properties",
+			{
+				"type": "at-rule",
+				"name": "include"
+			},
+			"declarations",
+			{
+				"type": "at-rule",
+				"name": "media"
+			},
+			{
+				"type": "rule",
+				"selector": "^&:\\w+$"
+			},
+			{
+				"type": "rule",
+				"selector": "^\\.[-_a-zA-Z0-9]+"
+			},
+			{
+				"type": "rule",
+				"selector": "^&__[-a-z0-9]+"
+			},
+			{
+				"type": "rule",
+				"selector": "^&_[-a-z0-9]+"
+			}
+		],
+		"order/properties-order": [
+			[
+				{
+					"properties": [
+						"content",
+						"box-sizing",
+						"display",
+						"flex",
+						"flex-wrap",
+						"flex-basis",
+						"flex-direction",
+						"flex-flow",
+						"flex-grow",
+						"flex-shrink",
+						"align-content",
+						"align-items",
+						"align-self",
+						"justify-content",
+						"order",
+						"grid",
+						"grid-area",
+						"grid-auto-*",
+						"grid-column",
+						"grid-column-*",
+						"grid-gap",
+						"grid-row",
+						"grid-row-*",
+						"grid-template",
+						"grid-template-*",
+						"position",
+						"z-index",
+						"top",
+						"right",
+						"bottom",
+						"left",
+						"width",
+						"min-width",
+						"max-width",
+						"height",
+						"min-height",
+						"max-height",
+						"overflow",
+						"overflow-*",
+						"margin",
+						"margin-*",
+						"border",
+						"border-*",
+						"padding",
+						"padding-*"
+					]
+				},
+				{
+					"properties": [
+						"transform",
+						"transform-*",
+						"perspective",
+						"perspective-origin",
+						"transition",
+						"transition-*",
+						"animation",
+						"animation-*"
+					]
+				}
+			]
+		],
+
+		"color-named": "never",
+		"color-hex-length": "long",
+		"color-no-invalid-hex": true,
+		"color-function-notation": "legacy",
+		"alpha-value-notation": "number",
+		"value-keyword-case": null,
+		"custom-property-empty-line-before": null,
+		"hue-degree-notation": "number",
+		"no-duplicate-at-import-rules": true,
+		"no-duplicate-selectors": true,
+		"no-empty-source": true,
+		"font-family-name-quotes": null,
+		"font-family-no-duplicate-names": true,
+		"font-family-no-missing-generic-family-keyword": true,
+		"font-weight-notation": "numeric",
+		"declaration-no-important": [
+			true,
+			{
+				"severity": "warning"
+			}
+		],
+		"declaration-block-no-duplicate-properties": [
+			true,
+			{
+				"ignore": ["consecutive-duplicates-with-different-syntaxes"]
+			}
+		],
+		"declaration-block-no-shorthand-property-overrides": true,
+		"declaration-block-single-line-max-declarations": 1,
+		"property-no-unknown": true,
+		"unit-no-unknown": true,
+		"string-no-newline": true,
+		"selector-pseudo-class-no-unknown": true,
+		"selector-pseudo-element-no-unknown": true,
+		"selector-type-no-unknown": true,
+		"selector-class-pattern": [
+			"^[a-z]([-|:]?[a-z0-9]+)*(__[a-z0-9]([-|:]?[a-z0-9]+)*)?(_[a-z0-9]([-|:]?[a-z0-9]+)*)?$",
+			{
+				"resolveNestedSelectors": true,
+				"message": "Селектор не соответствует БЭМ"
+			}
+		],
+		"length-zero-no-unit": true,
+		"media-feature-range-notation": "context"
+	}
+}
