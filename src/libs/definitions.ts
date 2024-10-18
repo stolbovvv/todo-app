@@ -2,7 +2,7 @@
  * Перечисление типов фильтров для задач.
  * @enum {string}
  */
-export enum FilterType {
+export const enum FilterType {
 	/** Показать все задачи */
 	all = 'ALL',
 	/** Показать активные задачи */
@@ -37,7 +37,7 @@ export interface State {
  * Перечисление типов действий для управления состоянием.
  * @enum {string}
  */
-export enum ActionType {
+export const enum ActionType {
 	/** Изменение фильтра задач */
 	changeFilter = 'CHANGE_FILTER',
 	/** Создание новой задачи */

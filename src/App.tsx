@@ -11,8 +11,8 @@ const initialState: State = {
 	tasks: [
 		{ id: uuidv4(), content: 'Получить работу в Mindbox', completed: false },
 		{ id: uuidv4(), content: 'Пройти собеседование', completed: false },
-		{ id: uuidv4(), content: 'Откликнутся на вакансию Junior front-end разработчик', completed: false },
-		{ id: uuidv4(), content: 'Написать тесты для приложения', completed: false },
+		{ id: uuidv4(), content: 'Откликнутся на вакансию Junior front-end разработчик', completed: true },
+		{ id: uuidv4(), content: 'Написать тесты для приложения', completed: true },
 		{ id: uuidv4(), content: 'Создать ToDo приложение', completed: true },
 	],
 };
@@ -120,7 +120,6 @@ export function App() {
 					onChangeFilter={changeFilter}
 				/>
 				<div className={styles.app__content}>
-					{}
 					{filteredTasks.length === 0 ? (
 						<p className={clsx(styles.app__message)}>{messages[state.filter]}</p>
 					) : (

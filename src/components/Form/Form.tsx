@@ -20,7 +20,7 @@ export function Form({ className, onSubmit }: FormProps) {
 		setValue(target.value);
 	};
 
-	const submitValue = (e: FormEvent<HTMLFormElement>) => {
+	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
 		if (value.length < 3) {
@@ -32,7 +32,7 @@ export function Form({ className, onSubmit }: FormProps) {
 	};
 
 	return (
-		<form className={clsx(className, styles.form)} onSubmit={submitValue}>
+		<form className={clsx(className, styles.form)} onSubmit={handleSubmit} data-testid="form">
 			<div className={styles.form__body}>
 				<input
 					className={clsx(styles.form__search, { [styles.form__search_error]: error })}
@@ -40,13 +40,18 @@ export function Form({ className, onSubmit }: FormProps) {
 					placeholder="Добавить новую задачу"
 					value={value}
 					onChange={changeValue}
+					data-testid="input"
 				/>
 				<button className={styles.form__button} type="submit">
 					<span>Добавить</span>
 					<IconPlus />
 				</button>
 			</div>
-			{error && <p className={styles.form__error}>Введите название, длинной более 3 символов!</p>}
+			{error && (
+				<p className={styles.form__error} data-testid="error">
+					Введите название, длинной более 3 символов!
+				</p>
+			)}
 		</form>
 	);
 }

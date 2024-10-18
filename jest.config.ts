@@ -23,9 +23,11 @@ const config: Config = {
 		],
 	},
 	moduleNameMapper: {
-		'\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+		'\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
 			'<rootDir>/tests/__mocks__/fileMock.ts',
-		'\\.(css|less|scss|sass)$': '<rootDir>/tests/__mocks__/styleMock.ts',
+		'\\.svg$': '<rootDir>/tests/__mocks__/svgMock.ts',
+		'\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+		'@/(.*)': '<rootDir>/src/$1',
 	},
 };
 
