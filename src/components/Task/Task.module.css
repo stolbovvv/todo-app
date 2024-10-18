@@ -72,7 +72,7 @@
 /* Content */
 
 .task__content {
-	flex: 0 0 auto;
+	flex: 0 1 auto;
 	margin-top: 0.22rem;
 	margin-right: auto;
 }
